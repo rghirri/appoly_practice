@@ -12,8 +12,7 @@ class DisplayController extends Controller
 
     public function __construct()
     {
-        $json = Http::get('https://dev.shepherd.appoly.io/fruit.json')
-                          ->json();
+        $json = Http::get('https://dev.shepherd.appoly.io/fruit.json')->json();
         $this->items = collect($json['menu_items']);
     }
 
@@ -27,6 +26,7 @@ class DisplayController extends Controller
         return view('DisplayList.index', [
             'items' => $this->items
         ]);
+ 
     }
 
     /**
@@ -36,7 +36,10 @@ class DisplayController extends Controller
      */
     public function filter()
     {
-        
+        //$items = $this->items->flatten();
+        // return view('DisplayList.index', [
+        //     'items' => $this->items
+        // ]);
     }
 
     /**
