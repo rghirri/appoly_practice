@@ -30,13 +30,13 @@ class DisplayController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for filter items.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function filter()
     {
-        //
+        
     }
 
     /**
