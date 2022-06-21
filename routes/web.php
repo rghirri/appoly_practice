@@ -15,3 +15,5 @@ use App\Http\Controllers\DisplayController;
 */
 
 Route::get('/', [ DisplayController::class, 'index' ]);
+
+Route::get('/filter', [ DisplayController::class, 'filter' ]);

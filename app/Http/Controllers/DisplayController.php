@@ -36,10 +36,13 @@ class DisplayController extends Controller
      */
     public function filter()
     {
-        //$items = $this->items->flatten();
-        // return view('DisplayList.index', [
-        //     'items' => $this->items
-        // ]);
+        $flattened = $this->items->flatten()->sort();
+        $items = $flattened->map(function ($item, $key) {
+               return $item; 
+          });
+        return view('DisplayList.filter', [
+            'items' => $items
+        ]);
     }
 
     /**
